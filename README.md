@@ -89,24 +89,29 @@ This bar chart depicts the that the causes of severe weather and intentional att
 
 <iframe 
     src="assets/plots/mean_outage_duration.html" 
-    width="800" 
-    height="600" 
+    width="590" 
+    height="395" 
     frameborder="0">
 </iframe>
+
+(ADD DESCRIPTION FOR PLOT)
 
 ## Assessment of Missingness
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. We believe the CUSTOMERS.AFFECTED column, that has the number of customers affected by an outage, contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself: for example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
 
 ## Hypothesis Testing
 The two hypotheses we tested were:
+
 **Null:** There is no difference in outage duration between coastal and inland states.
+
 **Alternative:** The mean duration of coastal outages is longer than the mean duration of inland state outages.
 
-The test statistic that we used to conduct our permuation test was the difference in means between the groups: coastal and inland. The result of our permutation test, was a p-value of 0.033, so we would reject the null hypothesis in favor of the alternative, using an alpha=0.05 significance level. Therefore, we conclude that coastal states have longer outages on average than inland states. 
+The test statistic that we used to conduct our permuation test was the difference in means between the groups: coastal and inland. The result of our permutation test, was a p-value of 0.033, so we would reject the null hypothesis in favor of the alternative, using an alpha=0.05 significance level. Meaning, we conclude our result is statistically significant and therefore there is evidence against the null and in favor of coastal states experiencing longer outages on average than inland states. 
 
-
+The null and alternative hypotheses are helpful towards answering our intial question from above, do coastal states experience longer power outages than inland states, because it tests for if there exists a relationship between location of a state on the duration of the outage experienced. The alpha of 0.05 was choosen because we wanted the conclusion of our permutation test to indicate statisitically significant results to reduce the chance of false positives (falsely rejecting the null). Difference in means was a good choice towards answering our question because we could simulate and compare the mean outage duration for the two groups (coastal and inland) to be able to make a conclusion about if one group experiences longer outages not by random chance.
 
 ## Framing a Prediction Problem
+Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because we thought it would be related to other features of the Outages dataset. The metric we are using to evaluate the quality of our model is Root Mean Squared Error (RMSE). We choose this metric because it quantifies the closeness of our predictions to the actual values in the OUTAGE.DURATION column.
 
 ## Baseline Model
 
