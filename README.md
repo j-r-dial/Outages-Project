@@ -106,18 +106,21 @@ The two hypotheses we tested were:
 
 **Alternative:** The mean duration of coastal outages is longer than the mean duration of inland state outages.
 
-The test statistic that we used to conduct our permuation test was the difference in means between the groups: coastal and inland. The result of our permutation test, was a p-value of 0.033, so we would reject the null hypothesis in favor of the alternative, using an alpha=0.05 significance level. Meaning, we conclude our result is statistically significant and therefore there is evidence against the null and in favor of coastal states experiencing longer outages on average than inland states. 
+The test statistic that we used to conduct our permuation test was the difference in means between the groups: coastal and inland. The result of our permutation test, was a p-value of 0.0164, so we would reject the null hypothesis in favor of the alternative, using an alpha=0.05 significance level. Meaning, we conclude our result is statistically significant and therefore there is evidence against the null and in favor of coastal states experiencing longer outages on average than inland states. 
 
 The null and alternative hypotheses are helpful towards answering our intial question from above, do coastal states experience longer power outages than inland states, because it tests for if there exists a relationship between location of a state on the duration of the outage experienced. The alpha of 0.05 was choosen because we wanted the conclusion of our permutation test to indicate statisitically significant results to reduce the chance of false positives (falsely rejecting the null). Difference in means was a good choice towards answering our question because we could simulate and compare the mean outage duration for the two groups (coastal and inland) to be able to make a conclusion about if one group experiences longer outages not by random chance.
 
 ## Framing a Prediction Problem
 Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because we thought it would be related to other features of the Outages dataset. The metric we are using to evaluate the quality of our model is Root Mean Squared Error (RMSE). We choose this metric because it quantifies the closeness of our predictions to the actual values in the OUTAGE.DURATION column.
 
-At time of prediction, we would know the cause of the outage, the region in which it occurred, and the weather. Therefore, we will train our model by first using the features: CAUSE.CATEGORY, NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, MONTH. 
+At time of prediction, we would know the cause of the outage, the region in which it occurred, and the weather. Therefore, we will train our model by first using the features: CAUSE.CATEGORY, NERC.REGION, CLIMATE.REGION, and ANOMALY.LEVEL. 
   
 ## Baseline Model
-Our baseline model predicts outage duration trained using the two quantitative features: ANOMALY.LEVEL and MONTH, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical columns using StandardScaler.
+Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical columns using StandardScaler. 
+
+We calculated our model to have an RMSE of 5934.684873212793. Due to this high error, we believe our current model is not "good" and can be improved to lower the root mean squared error.
 
 ## Final Model
+Features that we engineered with the goal of improving our baseline model was 
 
 ## Fairness Analysis
