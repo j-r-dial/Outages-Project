@@ -77,12 +77,14 @@ This bar chart depicts the that the causes of severe weather and intentional att
 
 <iframe 
     src="assets/mean_outage_duration.html" 
-    width="590" 
-    height="395" 
+    width="595" 
+    height="397" 
     frameborder="0">
 </iframe>
 
-(ADD DESCRIPTION FOR PLOT)
+This bar chart depicts the average outer times given the inland and coastal states. This bar chart takes information from both theh OUTAGE.DURATION column and the REGION_type column. It initially separates the outages by the different region types, and then works to calculate the average outage duration given the region types.
+
+
 
 ## Assessment of Missingness
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. We believe the CUSTOMERS.AFFECTED column, that has the number of customers affected by an outage, contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself: for example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
