@@ -1,7 +1,9 @@
 
 
 # Outages Project
-By Hannah Huang and Julia Dial
+<p style="text-align: center; font-size: 1.1em;">
+  By Hannah Huang and Julia Dial
+</p>
 
 ## Introduction
 Power outages are disruptive events that affect millions of people across 
