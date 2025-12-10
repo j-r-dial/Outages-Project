@@ -62,7 +62,7 @@ Intially, we converted the excel file to a csv format. We removed unnecessary he
 
 
 
-**Plot for Univariate Data Analysis of the CAUSE.CATEGORY column**
+**Plot for Univariate Data Analysis of the distribution of the CAUSE.CATEGORY column**
 
 <iframe
   src="assets/outage_causes.html"
@@ -71,7 +71,7 @@ Intially, we converted the excel file to a csv format. We removed unnecessary he
   frameborder="0"
 ></iframe>
 
-
+This bar chart depicts the that the causes of severe weather and intentional attack caused significantly more outages from 2000-2016 in comparison to the other outage causes. The causes associated with number of outages in ascending order is fuel supply emergency, islanding, equipment failure, public appeal, system operability distruption, intentional attack, then severe weather.
 ## Assessment of Missingness
 
 
