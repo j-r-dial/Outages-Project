@@ -61,6 +61,17 @@ Intially, we converted the excel file to a csv format. We removed unnecessary he
 |              3621 |         8.40733 | coastal       | severe weather     |          73.27 | MRO           | East North Central |            -0.2 |       6 |
 
 
+
+**Plot for Univariate Data Analysis of the CAUSE.CATEGORY column**
+
+<iframe
+  src="assets/outage_causes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
 ## Assessment of Missingness
 
 
