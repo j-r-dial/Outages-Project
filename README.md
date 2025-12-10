@@ -142,23 +142,23 @@ Our prediction problem was a regression problem predicting the response variable
 
 The metric we are using to evaluate the quality of our model is Root Mean Squared Error (RMSE). We choose this metric because it:
 
-1) quantifies the closeness of our predictions to the actual values in the OUTAGE.DURATION column
-  
-2) measures how far (on average) our predicted durations are from the true durations
+**(a)** quantifies the closeness of our predictions to the actual values in the OUTAGE.DURATION column
 
-3) penalizes large errors more heavily, which is important because some outages last extremely long
+**(b)** measures how far (on average) our predicted durations are from the true durations
 
-4) is standard for regression tasks involving continuous outcomes
+**(c)** penalizes large errors more heavily, which is important because some outages last extremely long
+
+**(d)** is standard for regression tasks involving continuous outcomes
 
 At time of prediction, we can confidently assume we would know
 
-1) CAUSE.CATEGORY — the general cause
+**1) CAUSE.CATEGORY** — the general cause
   
-2) NERC.REGION - the regional electrical reliability authority 
+**2) NERC.REGION** - the regional electrical reliability authority 
 
-3) CLIMATE.REGION — the regional climate classification
+**3) CLIMATE.REGION** — the regional climate classification
 
-4) ANOMALY.LEVEL — a numerical measure of temperature anomaly at the time of the outage
+**4) ANOMALY.LEVEL** — a numerical measure of temperature anomaly at the time of the outage
    
   
 ## Baseline Model
