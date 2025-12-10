@@ -1,9 +1,4 @@
-<style>
-/* Make page wider to fit tables */
-#wrapper, .inner {
-    max-width: 1400px;  /* Adjust width as needed */
-}
-</style>
+
 # Outages Project
 
 ## Introduction
