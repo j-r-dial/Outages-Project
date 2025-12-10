@@ -15,27 +15,32 @@ Our question of focus is **do coastal states experience longer power outages tha
 This outages dataset contains information about 1534 different power outages (rows) from 2000-2016 defined by 57 different features (columns). The data contain information on outage duration, location, people affected, characterics of area of outage occurence, etc. The features we believe are specifically essential to our project were POPPCT_URBAN, OUTAGE.DURATION, CAUSE.CATEGORY,  NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, PCT_WATER_TOT, and MONTH. We also feature engineered a "REGION_TYPE" column for future use. Descriptions of the following columns are as follows: 
 
 **1) POPPCT_URBAN:** Percentage of the total population of the U.S. state represented by the urban population (in %)
+
 **2) OUTAGE.DURATION:** Total duration of each individual outage event (in minutes)
+
 **3) CAUSE.CATEGORY:** Categories of all the events causing the major power outages ('severe weather', 'intentional attack','system operability disruption', 'equipment failure','public appeal', 'fuel supply emergency', 'islanding').
+
 **4) NERC.REGION:** The North American Electric Reliability Corporation (NERC) regions involved in the outage event ('MRO', 'SERC', 'RFC', 'ECAR', 'TRE', 'WECC', 'SPP', 'FRCC', 'NPCC','FRCC, SERC', 'HI', 'PR', 'HECO', 'ASCC').
+
 **5) CLIMATE.REGION:** U.S. Climate regions as specified by National Centers for Environmental Information ('East North Central', 'Central', 'South', 'Southeast', 'Northwest','Southwest', 'Northeast', 'West North Central', 'West',)
+
 **6) ANOMALY.LEVEL:** This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
+
 **7) MONTH:** Indicates the month when the outage event occurred (as integers)
+
 **8) PCT_WATER_TOT:** Percentage of state area covered by water (in %). This will later be used to classify inland vs coastal states.
+
 **9) REGION_TYPE:** A derived feature whether states with above-median water coverage are labeled as coastal states and inland if below the median threshold
 
 ## Data Cleaning and Exploratory Data Analysis
-In order to clean our data, we intially we converted the excel file to a csv format and removed unnecessary headers and rows before converting it to csv. After this, we used the following steps:
+In order to clean our data, we intially we converted the excel file to a csv format and removed unnecessary headers, and rows before converting it to csv. After this, we used the following steps:
 
-1) Converted the OUTAGE.DURATION, PCT_WATER_TOT, ANOMALY.LEVEL, POPPCT_URBAN, and MONTH columns from strings to float values in order to avoid type inconsistencies. 
-
-2) Dropped null rows from the data set if any of these columns had nan values.
-
-3) Removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible. 
-
-4) Created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT.
-
-5) Got rid of columns that we didn't need by filtering them out.
+1) Removed the "variables" column
+2) Converted the OUTAGE.DURATION, PCT_WATER_TOT, ANOMALY.LEVEL, POPPCT_URBAN, and MONTH columns from strings to float values in order to avoid type inconsistencies.
+3) Dropped null rows from the data set if any of these columns had nan values.
+4) Removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible.
+5) Created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT.
+6) Got rid of columns that we didn't need by filtering them out.
 
 This left us with a dataset of 1398 different outages (rows) and 9 different features (columns).
 
@@ -60,12 +65,13 @@ This left us with a dataset of 1398 different outages (rows) and 9 different fea
 
 <iframe
   src="assets/outage_causes.html"
-  width="590"
-  height="395"
+  width="595"
+  height="397"
   frameborder="0"
 ></iframe>
 
 This bar chart depicts the that the causes of severe weather and intentional attack caused significantly more outages from 2000-2016 in comparison to the other outage causes. The causes associated with number of outages in ascending order is fuel supply emergency, islanding, equipment failure, public appeal, system operability distruption, intentional attack, then severe weather.
+
 
 **Plot for Bivariate Data Analysis of distribution of mean outage duration given the cause category**
 
