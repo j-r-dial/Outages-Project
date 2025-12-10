@@ -1,6 +1,6 @@
 # Outages-Project
 
-**Step 1: Introduction**
+## Step 1: Introduction
 Power outages are disruptive events that affect millions of people across 
 the United States every year. Beyond just inconvenience, long electrical 
 outages can impact emergency services, hospitals, economic activity, and 
@@ -10,9 +10,9 @@ events. We wanted to explore and understand where outages occur and why some
 areas experience longer disruptions than others.  
 
 
-**Step 2: Data Cleaning and Exploratory Data Analysis**
-**Step 3: Assessment of Missingness**
-**Step 4: Hypothesis Testing**
+###Step 2: Data Cleaning and Exploratory Data Analysis
+####Step 3: Assessment of Missingness
+##### Step 4: Hypothesis Testing
 **Step 5: Framing a Prediction Problem**
 **Step 6: Baseline Model**
 **Step 7: Final Model**
