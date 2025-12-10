@@ -104,9 +104,12 @@ This bar chart depicts the average outer times given the inland and coastal stat
 For this dataframe, we grouped by REGION_TYPE, and then continued by grouping together different cause categories in order to allow us to understand how different types of outages behave across different geographic environments. Outage duration is influenced not only by the outage location, but also the cause of the outage. Later in our project, we intend to explore whether or not there is a different between outage duration in coastal vs. inland states. We wanted to look into the different features by grouping together nuanced variables and then calculate statistical values that would not appear if we analyzed the values separately.
 
 We also chose to calculate 3 different statistical values given our groupings:
-1)  Mean outage duration: captures the overall average severity in length of power outages
-2)  Median outage duration: describes the typical outage duration while successfully dealing with outliers
-3)  Count → shows how many outages fall into each pair of region × category, helping us understand reliability of the comparison.
+
+**1) Mean outage duration:** captures the overall average severity in length of power outages
+
+**2) Median outage duration:** describes the typical outage duration while successfully dealing with outliers
+
+**3) Count:** shows how many outages fall into each pair of region × category, helping us understand reliability of the comparison.
 
 In our grouped data, we can see that there were a significantly higher amount of weather attacks on coastal regions than inland states. This is most likely due to the fact that they experience more rainfall, hurricanes, etc. We can also see that fuel supply emergencies resulted in the longest average outage durations in both coastal and inland states. However, looking at the median, we can see that the mean is extremely skewed most likely due to outliers of extremely servere emergencies. There is a lot of information that we can use this dataframe to determine, and these are just some of the examples! We also created a pivot table to futher and better display our means.
 
