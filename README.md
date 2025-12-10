@@ -25,16 +25,15 @@ NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, and MONTH. Descriptions of the follo
 
 **OUTAGE_DURATION:** Duration of outage events (in minutes)
 
-**CAUSE.CATEGORY:** Categories of all the events causing the major power outages (severe weather, intentional attack, public appeal, fuel supply emergency, islanding, equipment failure).
+**CAUSE.CATEGORY:** Categories of all the events causing the major power outages ('severe weather', 'intentional attack','system operability disruption', 'equipment failure','public appeal', 'fuel supply emergency', 'islanding').
 
-**NERC.REGION:** The North American Electric Reliability Corporation (NERC) regions involved in the outage event
+**NERC.REGION:** The North American Electric Reliability Corporation (NERC) regions involved in the outage event ('MRO', 'SERC', 'RFC', 'ECAR', 'TRE', 'WECC', 'SPP', 'FRCC', 'NPCC','FRCC, SERC', 'HI', 'PR', 'HECO', 'ASCC').
 
-**CLIMATE.REGION:** U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)
+**CLIMATE.REGION:** U.S. Climate regions as specified by National Centers for Environmental Information ('East North Central', 'Central', 'South', 'Southeast', 'Northwest','Southwest', 'Northeast', 'West North Central', 'West',)
 
 **ANOMALY.LEVEL:** This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
 
 **MONTH:** 	Indicates the month when the outage event occurred (as integers)
-
 
 We will explain why these features are nessecary in later steps.
 
