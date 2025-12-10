@@ -84,7 +84,7 @@ This bar chart depicts the that the causes of severe weather and intentional att
 
 This bar chart depicts the average outer times given the inland and coastal states. This bar chart takes information from both theh OUTAGE.DURATION column and the REGION_type column. It initially separates the outages by the different region types, and then works to calculate the average outage duration given the region types.
 
-### THIS IS OUR GROUPING ANALYSIS TABLE
+**Full Grouping Dataframe Below**
 
 | REGION_TYPE   | CAUSE.CATEGORY                |      mean |   median |   count |
 |:--------------|:------------------------------|----------:|---------:|--------:|
@@ -98,14 +98,29 @@ This bar chart depicts the average outer times given the inland and coastal stat
 | inland        | equipment failure             |   260.474 |    149   |      19 |
 | inland        | fuel supply emergency         | 10247.1   |   7500.5 |       8 |
 | inland        | intentional attack            |   520.907 |     87   |     161 |
+| inland        | islanding                     |   155.091 |     56   |      11 |
+| inland        | public appeal                 |  1099.41  |    398   |      34 |
+| inland        | severe weather                |  3704.13  |   1865   |     289 |
+| inland        | system operability disruption |  1076.56  |    245   |      41 |
+
+For this dataframe, we grouped by REGION_TYPE, and then continued by grouping together different cause categories in order to allow us to understand how different types of outages behave across different geographic environments. Outage duration is influenced not only by the outage location, but also the cause of the outage. Later in our project, we intend to explore whether or not there is a different between outage duration in coastal vs. inland states. We wanted to look into the different features by grouping together nuanced variables and then calculate statistical values that would not appear if we analyzed the values separately.
+
+We also chose to calculate 3 different statistical values given our groupings:
+1)  Mean outage duration: captures the overall average severity in length of power outages
+2)  Median outage duration: describes the typical outage duration while successfully dealing with outliers
+3)  Count → shows how many outages fall into each pair of region × category, helping us understand reliability of the comparison.
+
+In our grouped data, we can see that there were a significantly higher amount of weather attacks on coastal regions than inland states. This is most likely due to the fact that they experience more rainfall, hurricanes, etc. We can also see that fuel supply emergencies resulted in the longest average outage durations in both coastal and inland states. However, looking at the median, we can see that the mean is extremely skewed most likely due to outliers of extremely servere emergencies. There is a lot of information that we can use this dataframe to determine, and these are just some of the examples! We also created a pivot table to futher and better display our means.
 
 
 ### THIS IS OUR PIVOT TABLE
 
-|   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
-|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
-|            2713.74  |                 14347.2 |              522.901 |     215.697 |         1826.94 |          4024.76 |                         576.101 |
-|             260.474 |                 10247.1 |              520.907 |     155.091 |         1099.41 |          3704.13 |                        1076.56  |
+| REGION_TYPE   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|:--------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+| coastal       |            2713.74  |                 14347.2 |              522.901 |     215.697 |         1826.94 |          4024.76 |                         576.101 |
+| inland        |             260.474 |                 10247.1 |              520.907 |     155.091 |         1099.41 |          3704.13 |                        1076.56  |
+
+This is our pivot table! It includes information about the average power outage duration given a specific cause and region type. We can also see this information in our grouped dataframe above, as this is just another format if displaying our information. The rows are separated by region type, and each column gives the cause category. 
 
 ## Assessment of Missingness
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. There is no correlation between the missing values in the column with any other column in the dataset. We believe the CUSTOMERS.AFFECTED column - which has the number of customers affected by an outage - contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself. For example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
