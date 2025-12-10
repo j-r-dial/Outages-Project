@@ -18,12 +18,12 @@ climate conditions, and regional characteristics?**
 This outages dataset contains information about 1534 different power outages (rows) from 2000-2016 defined
 by 57 different features (columns). The data contain information on outage duration, location, 
 people affected, characterics of area of outage occurence, etc. Specifically, the 
-features essential to our model were POPCT_URBAN, OUTAGE_DURATION, CAUSE.CATEGORY, 
+features essential to our model were POPPCT_URBAN, OUTAGE.DURATION, CAUSE.CATEGORY, 
 NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, and MONTH. Descriptions of the following columns are as follows: 
 
-**POPCT_URBAN:** Percentage of the total population of the U.S. state represented by the urban population (in %)
+**POPPCT_URBAN:** Percentage of the total population of the U.S. state represented by the urban population (in %)
 
-**OUTAGE_DURATION:** Duration of outage events (in minutes)
+**OUTAGE.DURATION:** Duration of outage events (in minutes)
 
 **CAUSE.CATEGORY:** Categories of all the events causing the major power outages ('severe weather', 'intentional attack','system operability disruption', 'equipment failure','public appeal', 'fuel supply emergency', 'islanding').
 
@@ -38,7 +38,10 @@ NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, and MONTH. Descriptions of the follo
 We will explain why these features are nessecary in later steps.
 
 ## Data Cleaning and Exploratory Data Analysis
-Intially, we converted the excel file to a csv format. We removed unnecessary headers and rows before converting it to csv. After that, to clean the data we converted the OUTAGE.DURATION column from strings to float values in order to avoid type inconsistencies. Then we dropped null rows from the data set if either the OUTAGE.DURATION or PCT_WATER_TOT columns had nan values, this was done because this information is necessary towards our classification of states as costal versus inland and for determining the strength of our model. Also, we removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible. Next, we converted PCT_WATER_TOT to numeric to avoid formating issues and percentage signs. Finally, we created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT. 
+Intially, we converted the excel file to a csv format. We removed unnecessary headers and rows before converting it to csv. After that, to clean the data we converted the OUTAGE.DURATION column from strings to float values in order to avoid type inconsistencies. Then we dropped null rows from the data set if either the OUTAGE.DURATION or PCT_WATER_TOT columns had nan values, this was done because this information is necessary towards our classification of states as costal versus inland and for determining the strength of our model. Also, we removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible. Next, we converted PCT_WATER_TOT to numeric to avoid formating issues and percentage signs. We created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT. Finally, we got rid of columns that we didn't need by filtering them out. This left us with a dataset of 1398 different outages (rows) and 11 different features (columns).
+
+**Our cleaned dataset below:**
+
 
 ## Assessment of Missingness
 
