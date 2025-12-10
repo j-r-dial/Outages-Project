@@ -43,7 +43,19 @@ NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, PCT_WATER_TOT, and MONTH. Descriptio
 **PCT_WATER_TOT:** Percentage of water area in the U.S. state as compared to the overall water area in the continental U.S. (in %)
 
 ## Data Cleaning and Exploratory Data Analysis
-Intially, we converted the excel file to a csv format. We removed unnecessary headers and rows before converting it to csv. After that, to clean the data we converted the OUTAGE.DURATION column from strings to float values in order to avoid type inconsistencies. Then we dropped null rows from the data set if either the OUTAGE.DURATION or PCT_WATER_TOT columns had nan values, this was done because this information is necessary towards our classification of states as costal versus inland and for determining the strength of our model. Also, we removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible. Next, we converted PCT_WATER_TOT to numeric to avoid formating issues and percentage signs. We created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT. Finally, we got rid of columns that we didn't need by filtering them out. This left us with a dataset of 1398 different outages (rows) and 9 different features (columns).
+In order to clean our data, we intially we converted the excel file to a csv format and removed unnecessary headers and rows before converting it to csv. After this, we used the following steps:
+
+1) Converted the OUTAGE.DURATION, PCT_WATER_TOT, ANOMALY.LEVEL, POPPCT_URBAN, and MONTH columns from strings to float values in order to avoid type inconsistencies. 
+
+2) Dropped null rows from the data set if any of these columns had nan values.
+
+3) Removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible. 
+
+4) Created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT.
+
+5) Got rid of columns that we didn't need by filtering them out.
+
+This left us with a dataset of 1398 different outages (rows) and 9 different features (columns).
 
 **Our cleaned dataset below:**
 
