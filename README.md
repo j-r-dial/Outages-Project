@@ -1,5 +1,3 @@
-
-
 # Outages Project
 <p style="text-align: center; font-size: 1.1em;">
   By Hannah Huang and Julia Dial
@@ -113,7 +111,7 @@ We also chose to calculate 3 different statistical values given our groupings:
 In our grouped data, we can see that there were a significantly higher amount of weather attacks on coastal regions than inland states. This is most likely due to the fact that they experience more rainfall, hurricanes, etc. We can also see that fuel supply emergencies resulted in the longest average outage durations in both coastal and inland states. However, looking at the median, we can see that the mean is extremely skewed most likely due to outliers of extremely servere emergencies. There is a lot of information that we can use this dataframe to determine, and these are just some of the examples! We also created a pivot table to futher and better display our means.
 
 
-### THIS IS OUR PIVOT TABLE
+**Pivot Table Below**
 
 | REGION_TYPE   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
 |:--------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
