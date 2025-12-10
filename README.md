@@ -15,21 +15,13 @@ Our question of focus is **do coastal states experience longer power outages tha
 This outages dataset contains information about 1534 different power outages (rows) from 2000-2016 defined by 57 different features (columns). The data contain information on outage duration, location, people affected, characterics of area of outage occurence, etc. The features we believe are specifically essential to our project were POPPCT_URBAN, OUTAGE.DURATION, CAUSE.CATEGORY,  NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, PCT_WATER_TOT, and MONTH. We also feature engineered a "REGION_TYPE" column for future use. Descriptions of the following columns are as follows: 
 
 **1) POPPCT_URBAN:** Percentage of the total population of the U.S. state represented by the urban population (in %)
-
 **2) OUTAGE.DURATION:** Total duration of each individual outage event (in minutes)
-
 **3) CAUSE.CATEGORY:** Categories of all the events causing the major power outages ('severe weather', 'intentional attack','system operability disruption', 'equipment failure','public appeal', 'fuel supply emergency', 'islanding').
-
 **4) NERC.REGION:** The North American Electric Reliability Corporation (NERC) regions involved in the outage event ('MRO', 'SERC', 'RFC', 'ECAR', 'TRE', 'WECC', 'SPP', 'FRCC', 'NPCC','FRCC, SERC', 'HI', 'PR', 'HECO', 'ASCC').
-
 **5) CLIMATE.REGION:** U.S. Climate regions as specified by National Centers for Environmental Information ('East North Central', 'Central', 'South', 'Southeast', 'Northwest','Southwest', 'Northeast', 'West North Central', 'West',)
-
 **6) ANOMALY.LEVEL:** This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
-
 **7) MONTH:** Indicates the month when the outage event occurred (as integers)
-
 **8) PCT_WATER_TOT:** Percentage of state area covered by water (in %). This will later be used to classify inland vs coastal states.
-
 **9) REGION_TYPE:** A derived feature whether states with above-median water coverage are labeled as coastal states and inland if below the median threshold
 
 ## Data Cleaning and Exploratory Data Analysis
