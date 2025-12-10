@@ -88,7 +88,7 @@ This bar chart depicts the that the causes of severe weather and intentional att
 **Plot for Bivariate Data Analysis of distribution of mean outage duration given the cause category**
 
 <iframe 
-    src="assets/plots/mean_outage_duration.html" 
+    src="assets/mean_outage_duration.html" 
     width="590" 
     height="395" 
     frameborder="0">
@@ -113,7 +113,10 @@ The null and alternative hypotheses are helpful towards answering our intial que
 ## Framing a Prediction Problem
 Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because we thought it would be related to other features of the Outages dataset. The metric we are using to evaluate the quality of our model is Root Mean Squared Error (RMSE). We choose this metric because it quantifies the closeness of our predictions to the actual values in the OUTAGE.DURATION column.
 
+At time of prediction, we would know the cause of the outage, the region in which it occurred, and the weather. Therefore, we will train our model by first using the features: CAUSE.CATEGORY, NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, MONTH. 
+  
 ## Baseline Model
+Our baseline model predicts outage duration trained using the two quantitative features: ANOMALY.LEVEL and MONTH, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical columns using StandardScaler.
 
 ## Final Model
 
