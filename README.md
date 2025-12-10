@@ -66,8 +66,8 @@ Intially, we converted the excel file to a csv format. We removed unnecessary he
 
 <iframe
   src="assets/outage_causes.html"
-  width="600"
-  height="400"
+  width="590"
+  height="395"
   frameborder="0"
 ></iframe>
 
