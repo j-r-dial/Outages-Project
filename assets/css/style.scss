@@ -1,16 +1,43 @@
 ---
 ---
 
-@import "{{ site.theme }}";   /* keep the theme’s default styles */
+/* Pull in the Leap Day theme's default CSS */
+@import "{{ site.theme }}";
 
-/* ↓↓↓ your custom styles start here ↓↓↓ */
+/* 👇 Your custom styles go below this line */
 
-/* Example: make the content wider */
-.wrapper, .inner {
-  max-width: 1200px;
+/* Example: change body background and font */
+body {
+  background-color: #fdfcf7;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Example: center headings a bit nicer */
-h1, h2, h3 {
-  text-align: left;
+/* Example: make main headings bigger and centered */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-top: 1.5rem;
+}
+
+/* Example: style section headings */
+h2 {
+  margin-top: 2rem;
+  border-bottom: 2px solid #e4e4e4;
+  padding-bottom: 0.3rem;
+}
+
+/* Example: make tables nicer */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+}
+
+th {
+  background-color: #f3f3f3;
+  font-weight: 600;
 }
