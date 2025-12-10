@@ -84,7 +84,28 @@ This bar chart depicts the that the causes of severe weather and intentional att
 
 This bar chart depicts the average outer times given the inland and coastal states. This bar chart takes information from both theh OUTAGE.DURATION column and the REGION_type column. It initially separates the outages by the different region types, and then works to calculate the average outage duration given the region types.
 
+### THIS IS OUR GROUPING ANALYSIS TABLE
 
+| REGION_TYPE   | CAUSE.CATEGORY                |      mean |   median |   count |
+|:--------------|:------------------------------|----------:|---------:|--------:|
+| coastal       | equipment failure             |  2713.74  |    269   |      35 |
+| coastal       | fuel supply emergency         | 14347.2   |   3960   |      30 |
+| coastal       | intentional attack            |   522.901 |    113   |     171 |
+| coastal       | islanding                     |   215.697 |    122   |      33 |
+| coastal       | public appeal                 |  1826.94  |    557   |      35 |
+| coastal       | severe weather                |  4024.76  |   2775   |     452 |
+| coastal       | system operability disruption |   576.101 |    199   |      79 |
+| inland        | equipment failure             |   260.474 |    149   |      19 |
+| inland        | fuel supply emergency         | 10247.1   |   7500.5 |       8 |
+| inland        | intentional attack            |   520.907 |     87   |     161 |
+
+
+### THIS IS OUR PIVOT TABLE
+
+|   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+|            2713.74  |                 14347.2 |              522.901 |     215.697 |         1826.94 |          4024.76 |                         576.101 |
+|             260.474 |                 10247.1 |              520.907 |     155.091 |         1099.41 |          3704.13 |                        1076.56  |
 
 ## Assessment of Missingness
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. There is no correlation between the missing values in the column with any other column in the dataset. We believe the CUSTOMERS.AFFECTED column - which has the number of customers affected by an outage - contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself. For example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
