@@ -21,21 +21,19 @@ people affected, characterics of area of outage occurence, etc. Specifically, th
 features essential to our model were POPCT_URBAN, OUTAGE_DURATION, CAUSE.CATEGORY, 
 NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, and MONTH. Descriptions of the following columns are as follows: 
 
-**POPCT_URBAN:** Percenta
+**POPCT_URBAN:** Percentage of the total population of the U.S. state represented by the urban population (in %)
 
-**OUTAGE_DURATION:**
+**OUTAGE_DURATION:** Duration of outage events (in minutes)
 
-**CAUSE.CATEGORY:**
+**CAUSE.CATEGORY:** Categories of all the events causing the major power outages (severe weather, intentional attack, public appeal, fuel supply emergency, islanding, equipment failure).
 
-**NERC.REGION:**
+**NERC.REGION:** The North American Electric Reliability Corporation (NERC) regions involved in the outage event
 
-**CLIMATE.REGION:**
+**CLIMATE.REGION:** U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)
 
-**ANOMALY.LEVEL:**
+**ANOMALY.LEVEL:** This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
 
-**MONTH:**
-
-
+**MONTH:** 	Indicates the month when the outage event occurred (as integers)
 
 
 We will explain why these features are nessecary in later steps.
