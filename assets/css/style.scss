@@ -1,41 +1,46 @@
----
----
+/* ================================================
+   CUSTOM WIDTH OVERRIDES FOR LEAP DAY THEME
+   Make the white content section wider
+   ================================================ */
 
-/* Pull in the Leap Day theme's default CSS */
-@import "{{ site.theme }}";
-
-/* 👇 Your custom styles go below this line */
-table {
-  display: block;        /* so overflow works */
-  max-width: 100%;       /* don't go wider than the content column */
-  overflow-x: auto;      /* show horizontal scrollbar when needed */
-  white-space: nowrap;   /* keep cells on one line so it scrolls */
+#wrapper, 
+.inner {
+  max-width: 1100px !important;   /* Increase width of white content box */
+  width: 90% !important;           /* Allow responsiveness */
+  margin: 0 auto !important;       /* Center the content */
 }
 
-/* Example: change body background and font */
+/* Prevent overlap with left sidebar */
+#main {
+  margin-left: 260px !important;   /* Adjust depending on sidebar width */
+}
+
+/* Optional: improve readability */
 body {
   background-color: #fdfcf7;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Example: make main headings bigger and centered */
+/* Section headings */
 h1 {
   text-align: center;
   font-size: 2.4rem;
   margin-top: 1.5rem;
 }
 
-/* Example: style section headings */
 h2 {
   margin-top: 2rem;
   border-bottom: 2px solid #e4e4e4;
   padding-bottom: 0.3rem;
 }
 
-/* Example: make tables nicer */
+/* Table styling */
 table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
   border-collapse: collapse;
-  width: 100%;
 }
 
 th, td {
