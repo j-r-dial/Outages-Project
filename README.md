@@ -104,16 +104,25 @@ The null and alternative hypotheses are helpful towards answering our intial que
 Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because we thought it would be related to other features of the outages dataset. We also believe that it is one of the most important features in our dataset. 
 
 The metric we are using to evaluate the quality of our model is Root Mean Squared Error (RMSE). We choose this metric because it:
+
 1) quantifies the closeness of our predictions to the actual values in the OUTAGE.DURATION column
+  
 2) measures how far (on average) our predicted durations are from the true durations
+
 3) penalizes large errors more heavily, which is important because some outages last extremely long
+
 4) is standard for regression tasks involving continuous outcomes
 
 At time of prediction, we can confidently assume we would know
+
 1) CAUSE.CATEGORY — the general cause
-2) NERC.REGION - the regional electrical reliability authority
+  
+2) NERC.REGION - the regional electrical reliability authority 
+
 3) CLIMATE.REGION — the regional climate classification
+
 4) ANOMALY.LEVEL — a numerical measure of temperature anomaly at the time of the outage
+   
   
 ## Baseline Model
 Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical column using StandardScaler. 
