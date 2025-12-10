@@ -1,0 +1,16 @@
+---
+---
+
+@import "{{ site.theme }}";   /* keep the theme’s default styles */
+
+/* ↓↓↓ your custom styles start here ↓↓↓ */
+
+/* Example: make the content wider */
+.wrapper, .inner {
+  max-width: 1200px;
+}
+
+/* Example: center headings a bit nicer */
+h1, h2, h3 {
+  text-align: left;
+}
