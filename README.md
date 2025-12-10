@@ -116,11 +116,12 @@ Our prediction problem was a regression problem predicting the response variable
 At time of prediction, we would know the cause of the outage, the region in which it occurred, and the weather. Therefore, we will train our model by first using the features: CAUSE.CATEGORY, NERC.REGION, CLIMATE.REGION, and ANOMALY.LEVEL. 
   
 ## Baseline Model
-Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical columns using StandardScaler. 
+Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical column using StandardScaler. 
 
 We calculated our model to have an RMSE of 5934.684873212793. Due to this high error, we believe our current model is not "good" and can be improved to lower the root mean squared error.
 
 ## Final Model
-Features that we engineered with the goal of improving our baseline model was 
+A feature we added with the goal of improving our baseline model was MONTH, which will be helpful in our prediction task assuming that months are associated with different weather patterns.
+Features that we engineered 
 
 ## Fairness Analysis
