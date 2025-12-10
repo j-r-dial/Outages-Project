@@ -84,6 +84,16 @@ This left us with a dataset of 1398 different outages (rows) and 9 different fea
 ></iframe>
 
 This bar chart depicts the that the causes of severe weather and intentional attack caused significantly more outages from 2000-2016 in comparison to the other outage causes. The causes associated with number of outages in ascending order is fuel supply emergency, islanding, equipment failure, public appeal, system operability distruption, intentional attack, then severe weather.
+
+**Plot for Bivariate Data Analysis of distribution of mean outage duration given the cause category**
+
+<iframe 
+    src="assets/plots/mean_outage_duration.html" 
+    width="800" 
+    height="600" 
+    frameborder="0">
+</iframe>
+
 ## Assessment of Missingness
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. We believe the CUSTOMERS.AFFECTED column, that has the number of customers affected by an outage, contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself: for example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
 
