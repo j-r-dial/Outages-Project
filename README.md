@@ -10,6 +10,7 @@ in Virginia, where we experience regular power outages as a result of weather
 events as a result of what we believe to be living in a coastal state. We wanted
 to explore and understand where outages occur and why some areas experience longer
 disruptions than others. Our question of focus is: 
+
 **“Do coastal states experience longer power outages than inland states? Additionally,
 can outage duration be accurately predicted using information about outage cause, 
 climate conditions, and regional characteristics?”**
@@ -19,12 +20,19 @@ by 57 different features (columns). The data contain information on outage durat
 people affected, characterics of area of outage occurence, etc. Specifically, the 
 features essential to our model were POPCT_URBAN, OUTAGE_DURATION, CAUSE.CATEGORY, 
 NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, and MONTH. Descriptions of the following columns are as follows: 
+
 **POPCT_URBAN:** Percenta
+
 **OUTAGE_DURATION:**
+
 **CAUSE.CATEGORY:**
+
 **NERC.REGION:**
+
 **CLIMATE.REGION:**
+
 **ANOMALY.LEVEL:**
+
 **MONTH:**
 
 
