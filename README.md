@@ -104,6 +104,8 @@ This bar chart depicts the average outer times given the inland and coastal stat
     frameborder="0">
 </iframe>
 
+The bar chart above displays the relationship between the columns OUTAGE.DURATION and MONTH, where the x axis is month number and the y axis is the mean duration for a specific month. A pattern illustrated in this graph is that spring into summer months (April through August) have lower mean outage durations in comparison to fall and winter months (September to February). 
+
 
 **Full Grouping Dataframe Below**
 
