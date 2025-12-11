@@ -73,7 +73,7 @@ This left us with a dataset of 1398 different outages (rows) and 9 different fea
   frameborder="0"
 ></iframe>
 
-This bar chart depicts the that the causes of severe weather and intentional attack caused significantly more outages from 2000-2016 in comparison to the other outage causes. The causes associated with number of outages in ascending order is fuel supply emergency, islanding, equipment failure, public appeal, system operability distruption, intentional attack, then severe weather.
+This bar chart depicts that the causes of severe weather and intentional attack caused significantly more outages from 2000-2016 in comparison to the other outage causes. The causes associated with number of outages in ascending order is fuel supply emergency, islanding, equipment failure, public appeal, system operability distruption, intentional attack, then severe weather.
 
 **Histogram for Univariate Data Analysis of distribution of Outage Duration**
 <iframe
@@ -94,7 +94,7 @@ This histogram depicts that the distribution of outage duration in minutes from 
     frameborder="0">
 </iframe>
 
-This bar chart depicts the average outer times given the inland and coastal states. This bar chart takes information from both theh OUTAGE.DURATION column and the REGION_type column. It initially separates the outages by the different region types, and then works to calculate the average outage duration given the region types.
+This bar chart depicts the average outer times given the inland and coastal states. This bar chart takes information from both the OUTAGE.DURATION column and the REGION_type column. It initially separates the outages by the different region types, and then works to calculate the average outage duration given the region types.
 
 **Bar Graph for Bivariate Data Analysis of distribution of mean outage duration given the month**
 <iframe 
