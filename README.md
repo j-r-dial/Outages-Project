@@ -34,10 +34,15 @@ This outages dataset contains information about 1534 different power outages (ro
 In order to clean our data, we intially we converted the excel file to a csv format and removed unnecessary headers, and rows before converting it to csv. After this, we used the following steps:
 
 1) Removed the "variables" column
+  
 2) Converted the OUTAGE.DURATION, PCT_WATER_TOT, ANOMALY.LEVEL, POPPCT_URBAN, and MONTH columns from strings to float values in order to avoid type inconsistencies.
+
 3) Dropped null rows from the data set if any of these columns had nan values.
+
 4) Removed rows with outage durations less than or equal to 0 through filtering, as these values are physically impossible.
+
 5) Created a column, REGION_TYPE to classify whether the outage occured in a coastal or inland region based on the threshold of the median PCT_WATER_TOT.
+
 6) Got rid of columns that we didn't need by filtering them out.
 
 This left us with a dataset of 1398 different outages (rows) and 9 different features (columns).
