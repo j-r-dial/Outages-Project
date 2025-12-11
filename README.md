@@ -164,10 +164,11 @@ At time of prediction, we can confidently assume we would know
 ## Baseline Model
 Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical column using StandardScaler. 
 
-We calculated our model to have an RMSE of 5934.684873212793. Due to this high error, we believe our current model is not "good" and can be improved to lower the root mean squared error.
+We calculated our model to have an RMSE of 5934.684873212793. Due to this high error, we believe our current model is not "good," in the sense that the error is high meaning our model is predicting values far from the actual data in the OUTAGE.DURATION column, and can be improved to lower the root mean squared error. 
 
 ## Final Model
 A feature we added with the goal of improving our baseline model was MONTH, which will be helpful in our prediction task assuming that months are associated with different weather patterns.
+
 Features that we engineered 
 
 ## Fairness Analysis
