@@ -1,7 +1,7 @@
 # Outages Project
 <p style="text-align: center; font-size: 1.1em;">
   By Hannah Huang and Julia Dial
-</p>
+</p> 
 
 ## Introduction
 Power outages are disruptive events that affect millions of people across the United States every year. Beyond just inconvenience, long electrical outages can impact emergency services, hospitals, economic activity, and public safety. It is important to understand power outages so that individuals can navigate around them and anticipate which ares may need better power outage preparedness. 
