@@ -235,7 +235,7 @@ At time of prediction, we can confidently assume we would know
 ## Baseline Model
 Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three nominal categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical column using StandardScaler. 
 
-We calculated our model to have an RMSE of 5934.684873212793. Due to this high error, we believe our current model is not "good," in the sense that the error is high meaning our model is predicting values far from the actual data in the OUTAGE.DURATION column, and can be improved to lower the root mean squared error. 
+We calculated our model to have an RMSE of 5934.684873212793 and MAE of 2555.68. Due to this high error, we believe our current model is not "good," in the sense that the error is high meaning our model is predicting values far from the actual data in the OUTAGE.DURATION column, and can be improved to lower the root mean squared error. 
 
 ## Final Model
 A feature we added with the goal of improving our baseline model was MONTH, which will be helpful in our prediction task assuming that months are associated with different weather patterns.
@@ -255,6 +255,8 @@ The modeling algorithm we choose was LinearRegression. We performed a k-fold cro
 -'model__min_samples_split': 5, a node must have 5 samples before the model splits which also avoids overfitting
 -'model__n_estimators': 100, gives the forest enough votes to make predictions without under or overfitting
 
-The performance of our model
+The performance of our model improved from our baseline model. In our baseline model we only used the features: NERC.REGION, CAUSE.CATEGORY, CLIMATE.REGION, and ANOMALY.LEVEL (that orginally included positive and negative values). In our improved final model, we added in the new IS_SUMMER feature as well as engineered the columns ANOMALY.LEVEL and OUTAGE.DURATION. As a result, we got a significantly lower RMSE of 1.65 and MAE of 1.22. This happened because we added the meanful feature IS_SUMMER and better aligned our ANOMALY.LEVEL and OUTAGE.DURATION to match our prediction goal. In summary, our final model is now better equipped to predict outage durations than our final model.
+
+**Visulization of Final Model Predictions:***
 
 ## Fairness Analysis
