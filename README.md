@@ -240,6 +240,14 @@ We calculated our model to have an RMSE of 5934.684873212793. Due to this high e
 ## Final Model
 A feature we added with the goal of improving our baseline model was MONTH, which will be helpful in our prediction task assuming that months are associated with different weather patterns.
 
-Features that we engineered were the ANOMALY.LEVEL column that we took the absolute value of and added a new column called RELATIVE_ANOMALY. Additionally, we created a new column IS_SUMMER that encodes the MONTH column where months with values 6,7,8 are classified as summer months. The last feature we engineered was taking the log of the OUTAGE.DURATION, which was done because our data was extremely skewed right (illustrated in the univariate distrubtion of OUTAGE.DURATION graph above) and taking the log helps improve the linearity of our model.
+Features that we engineered:
+
+**ANOMALY.LEVEL column** we took the absolute value of this column and added a new column called RELATIVE_ANOMALY. This feature improves our model because taking the absolute value allows us to predict based on the magnitute of the anomaly and for predicting the characteristics of outages, the severity of the anomaly is more important than whether it is positive or negative. Taking the absolute value allows the model to learn from the intensity of climate disruption, which is likely more predictive of outages than the direction of the anomaly.
+
+**MONTH** Additionally, we created a new column IS_SUMMER that encodes the MONTH column where months with values 6,7,8 are classified as summer months. Power outages have strong seasonal patterns. Encoding summer as a binary feature helps the model because instead of treating MONTH as a numeric variable (which incorrectly implies that July is “twice” January), this feature reflects a real difference in outage risk and duration driven by weather and demand cycles.
+
+**OUTAGE.DURATION** The last feature we engineered was taking the log of the OUTAGE.DURATION, which was done because our data was extremely skewed right (illustrated in the univariate distrubtion of OUTAGE.DURATION graph above) and taking the log helps improve the linearity of our model.
+
+The modeling algorithm we choose was LinearRegression. The best performing hyperparameters of our final model were "model_max_depth":12 and "model_min_samples_split": (ADD NUMBER). These parameters were selected through GridSearchCV. 
 
 ## Fairness Analysis
