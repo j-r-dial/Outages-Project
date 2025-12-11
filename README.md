@@ -248,12 +248,13 @@ Features that we engineered:
 
 **OUTAGE.DURATION** The last feature we engineered was taking the log of the OUTAGE.DURATION, which was done because our data was extremely skewed right (illustrated in the univariate distrubtion of OUTAGE.DURATION graph above) and taking the log helps improve the linearity of our model.
 
-The modeling algorithm we choose was LinearRegression. We performed a k-fold cross validation test with 5 folds to ensure that the model's performance was no dependent on a signle train-test split and also made sure that we weren't overfitting the model by measuring the performance across multiple folds. Our  parameters were: n_estimators (number of trees), max_depth, min_samples_split, min_samples_leaf, and max_features. The best performing hyperparameters of our final model were:
+The modeling algorithm we choose was LinearRegression. We performed a k-fold cross validation test with 5 folds to ensure that the model's performance was no dependent on a signle train-test split and also made sure that we weren't overfitting the model by measuring the performance across multiple folds. Our  parameters were: n_estimators (number of trees), max_depth, min_samples_split, min_samples_leaf, and max_features. The best performing hyperparameters of our final model found using GridSearchCV to test many different hyperparameter combinations were:
 - 'model__max_depth': 12 
 -'model__max_features': 'sqrt', each split considers the sqaure root of the number of features which improves generalization
-- 'model__min_samples_leaf': 2,
--'model__min_samples_split': 5,
--'model__n_estimators': 100
-These parameters were selected through GridSearchCV. 
+- 'model__min_samples_leaf': 2, every leaf in the tree must contain 2 samples in order to prevet overfitting
+-'model__min_samples_split': 5, a node must have 5 samples before the model splits which also avoids overfitting
+-'model__n_estimators': 100, gives the forest enough votes to make predictions without under or overfitting
+
+The performance of our model
 
 ## Fairness Analysis
