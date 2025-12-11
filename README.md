@@ -160,7 +160,7 @@ The column in our dataset with nontrivial mmissingness that we analyzed was the 
 
 **Alternative Hypothesis:** Missingness of DEMAND.LOSS.MW depends on OUTAGE.DURATION.
 
-**Conclusion** Based on the p-value of (0.67) we would fail to reject the null hypothesis, ().
+**Interpretation** Based on the p-value of 0.67 we would fail to reject the null hypothesis. Therefore, there is not sufficient evidence to conclude that the missingness in demand loss can be explained by the duration of the outage. 
 
 2. Our second hypothesis test used the DEMAND.LOSS and CAUSE.CATEGORY columns. Similiary, our hypotheses were as follows:
 
@@ -168,8 +168,7 @@ The column in our dataset with nontrivial mmissingness that we analyzed was the 
 
 **Alternative Hypothesis:** Missingness of DEMAND.LOSS.MW depends on CAUSE.CATEGORY.
 
-Here, the p-value was () which is less than our significance level of 0.05, meaning that we reject the null hypothesis. Since we reject the null, this illustrates that the missingness in the DEMAND.LOSS column does depend on CAUSE.CATEGORY. Likely, this is because different causes of outages are associated with varying amounts of peak MegaWatt loss, which could be an explannation for why missingness in this column depends on outage cause. 
-
+**Interpretation** Here, the p-value was () which is less than our significance level of 0.05, meaning that we reject the null hypothesis. Since we reject the null, this illustrates that the missingness in the DEMAND.LOSS column does depend on CAUSE.CATEGORY. Likely, this is because different causes of outages are associated with varying amounts of peak MegaWatt loss, which could be an explannation for why missingness in this column depends on outage cause. 
 
 ## Hypothesis Testing
 The two hypotheses we tested were:
