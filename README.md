@@ -70,13 +70,15 @@ This left us with a dataset of 1398 different outages (rows) and 9 different fea
 
 This bar chart depicts the that the causes of severe weather and intentional attack caused significantly more outages from 2000-2016 in comparison to the other outage causes. The causes associated with number of outages in ascending order is fuel supply emergency, islanding, equipment failure, public appeal, system operability distruption, intentional attack, then severe weather.
 
-**Histogram for Univariate Data Analysis of distribution of the Mean Durations**
+**Histogram for Univariate Data Analysis of distribution of Outage Duration**
 <iframe
   src="assets/outage_duration_hist.html"
   width="595"
   height="397"
   frameborder="0"
 ></iframe>
+
+This histogram depicts that the distribution of outage duration in minutes from 0 to the max duration which corresponds to the bin 1950-1999 minutes. This histogram is right skewed with the highest density of duration length clustered between 0 to 500 minutes. The bin that contains the most frequent length of duration is the first bin with width 0-49 minutes, which means that the outages in this dataset were relatively short.
 
 **Bar Graph for Bivariate Data Analysis of distribution of mean outage duration given the cause category**
 
