@@ -152,13 +152,15 @@ This is our pivot table! It includes information about the average power outage 
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. There is no correlation between the missing values in the column with any other column in the dataset. We believe the CUSTOMERS.AFFECTED column - which has the number of customers affected by an outage - contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself. For example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
 
 **Missingness Dependency**
-The column in our dataset with nontrivial mmissingness that we analyzed was the DEMAND.LOSS.MW column. We performed two permuation tests to determine if the missingess observed in the DEMAND.LOSS.MW column depends on 1) the OUTAGE.DURATION or 2) CAUSE.CATEGORY. Both permuation tests were determining if DEMAND.LOSS.MW missingness was Missing at Random (MAR), meaning that missingness depends on another column.
+The column in our dataset with nontrivial mmissingness that we analyzed was the DEMAND.LOSS.MW column. We performed two permuation tests to determine if the missingess observed in the DEMAND.LOSS.MW column depends on 1) the OUTAGE.DURATION or 2) CAUSE.CATEGORY. Both permuation tests were determining if DEMAND.LOSS.MW missingness was Missing at Random (MAR), meaning that missingness depends on another column. Additionally, for both permutation tests the test statistic we choose was Total Variation Distance (TVD) because this quantifies the difference in distributions.
 
 1. For the first permuation test, using DEMAND.LOSS.MW and OUTAGE.DURATION, our hypotheses were as follows:
 
 **Null Hypothesis:** Missingness of DEMAND.LOSS.MW is independent of OUTAGE.DURATION.
 
 **Alternative Hypothesis:** Missingness of DEMAND.LOSS.MW depends on OUTAGE.DURATION.
+
+**Empirical Distribution of Total Variation Distance**
 
 <iframe
   src="assets/MCAR_perm_test_duration_missingness.html"
@@ -167,13 +169,15 @@ The column in our dataset with nontrivial mmissingness that we analyzed was the 
   frameborder="0"
 ></iframe>
 
-**Interpretation** Based on the p-value of 0.67 we would fail to reject the null hypothesis. Therefore, there is not sufficient evidence to conclude that the missingness in demand loss can be explained by the duration of the outage. 
+**Interpretation** Based on the p-value of 0.67 we would fail to reject the null hypothesis. Therefore, there is not sufficient evidence to conclude that the missingness in demand loss can be explained by the duration of the outage. Thus, since missingness in demand loss is not dependent on duration the missingness is MCAR not MAR.
 
 2. Our second hypothesis test used the DEMAND.LOSS and CAUSE.CATEGORY columns. Similiary, our hypotheses were as follows:
 
 **Null Hypothesis:** Missingness of DEMAND.LOSS.MW is independent of CAUSE.CATEGORY.
 
 **Alternative Hypothesis:** Missingness of DEMAND.LOSS.MW depends on CAUSE.CATEGORY.
+
+**Empirical Distribution of Total Variation Distance**
 
 <iframe
   src="assets/MAR_perm_test_outage_duration_missingness.html"
