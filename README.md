@@ -89,6 +89,13 @@ This bar chart depicts the that the causes of severe weather and intentional att
 
 This bar chart depicts the average outer times given the inland and coastal states. This bar chart takes information from both theh OUTAGE.DURATION column and the REGION_type column. It initially separates the outages by the different region types, and then works to calculate the average outage duration given the region types.
 
+**Bar Graph for Bivariate Data Analysis of distribution of mean outage duration given the month**
+<iframe 
+    src="assets/mean_outage_by_month.html" 
+    width="595" 
+    height="397" 
+    frameborder="0">
+</iframe>
 
 
 **Full Grouping Dataframe Below**
