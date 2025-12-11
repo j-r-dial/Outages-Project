@@ -200,6 +200,14 @@ The test statistic that we used to conduct our permuation test was the differenc
 
 The null and alternative hypotheses are helpful towards answering our intial question from above, do coastal states experience longer power outages than inland states, because it tests for if there exists a relationship between location of a state on the duration of the outage experienced. The alpha of 0.05 was choosen because we wanted the conclusion of our permutation test to indicate statisitically significant results to reduce the chance of false positives (falsely rejecting the null). Difference in means was a good choice towards answering our question because we could simulate and compare the mean outage duration for the two groups (coastal and inland) to be able to make a conclusion about if one group experiences longer outages not by random chance.
 
+**Sampling Distribution Graph**
+<iframe 
+    src="assets/perm_test_coastal_inland_duration.html" 
+    width="595" 
+    height="397" 
+    frameborder="0">
+</iframe>
+
 ## Framing a Prediction Problem
 Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because we thought it would be related to other features of the outages dataset. We also believe that it is one of the most important features in our dataset. 
 
