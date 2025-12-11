@@ -233,13 +233,13 @@ At time of prediction, we can confidently assume we would know
    
   
 ## Baseline Model
-Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical column using StandardScaler. 
+Our baseline model predicts outage duration trained using the quantitative feature: ANOMALY.LEVEL, as well as the three nominal categorical features: CAUSE.CATEGORY, NERC.REGION, and CLIMATE.REGION. We encoded the categorical columns using OneHotEncoder. Additionally, we standarized the numerical column using StandardScaler. 
 
 We calculated our model to have an RMSE of 5934.684873212793. Due to this high error, we believe our current model is not "good," in the sense that the error is high meaning our model is predicting values far from the actual data in the OUTAGE.DURATION column, and can be improved to lower the root mean squared error. 
 
 ## Final Model
 A feature we added with the goal of improving our baseline model was MONTH, which will be helpful in our prediction task assuming that months are associated with different weather patterns.
 
-Features that we engineered 
+Features that we engineered were the ANOMALY.LEVEL column that we took the absolute value of and added a new column called RELATIVE_ANOMALY. Additionally, we created a new column IS_SUMMER that encodes the MONTH column where months with values 6,7,8 are classified as summer months. The last feature we engineered was taking the log of the OUTAGE.DURATION, which was done because our data was extremely skewed right (illustrated in the univariate distrubtion of OUTAGE.DURATION graph above) and taking the log helps improve the linearity of our model.
 
 ## Fairness Analysis
