@@ -209,7 +209,7 @@ The null and alternative hypotheses are helpful towards answering our intial que
 </iframe>
 
 ## Framing a Prediction Problem
-Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because we thought it would be related to other features of the outages dataset. We also believe that it is one of the most important features in our dataset. 
+Our prediction problem was a regression problem predicting the response variable **OUTAGE.DURATION**. We chose this response variable because we thought we could build a model that would be able to closely predict duration of outages because it would be related to other features of the outages dataset. We also believe that it is one of the most important features in our dataset. 
 
 The metric we are using to evaluate the quality of our model is Root Mean Squared Error (RMSE). We choose this metric because it:
 
