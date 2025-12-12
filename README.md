@@ -1,4 +1,4 @@
-# Outages Project
+# Power Outage Durations
 <p style="text-align: center; font-size: 1.1em;">
   By Hannah Huang and Julia Dial
 </p> 
