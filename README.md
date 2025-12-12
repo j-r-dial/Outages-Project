@@ -10,7 +10,7 @@ Coincidentally, Hannah and Julia are both from the same hometown in Virginia, wh
 
 Our question of focus is **do coastal states experience longer power outages than inland states? Additionally, can outage duration be accurately predicted using information about outage cause, climate conditions, and regional characteristics?** This question is important because coastal states often experience hurricanes, flooding, and servere storms while inland states are more prominent to drought and extreme heat stress. We want to identify if there could be any possible correlation between these events.
 
-This outages dataset contains information about 1534 different power outages (rows) from 2000-2016 defined by 57 different features (columns). The data contain information on outage duration, location, people affected, characterics of area of outage occurence, etc. The features we believe are specifically essential to our project were POPPCT_URBAN, OUTAGE.DURATION, CAUSE.CATEGORY,  NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, PCT_WATER_TOT, and MONTH. We also feature engineered a "REGION_TYPE" column for future use. Descriptions of the following columns are as follows: 
+This outages dataset contains information about 1534 different power outages (rows) from 2000-2016 defined by 57 different features (columns). The data contain information on outage duration, location, people affected, characterics of area of outage occurence, etc. The features we believe are specifically essential to our project were POPPCT_URBAN, OUTAGE.DURATION, CAUSE.CATEGORY,  NERC.REGION, CLIMATE.REGION, ANOMALY.LEVEL, PCT_WATER_TOT, and MONTH. We also feature engineered a "REGION_TYPE" column for future use. All of these columns were nessecary because we believe they are the most useful to help us determine if there is any way we may be able to predict the time a future power outage might last.  Descriptions of the following columns are as follows: 
 
 **1) POPPCT_URBAN:** Percentage of the total population of the U.S. state represented by the urban population (in %)
 
@@ -152,9 +152,9 @@ This is our pivot table! It includes information about the average power outage 
 NMAR missingness relates to missing values in the data where the missingness is related to the value itself. There is no correlation between the missing values in the column with any other column in the dataset. We believe the CUSTOMERS.AFFECTED column - which has the number of customers affected by an outage - contains null values that are Not Missing At Random because the values in this column being missing could be due to the value itself. For example, a very small number of customers affected may go unreported. Therfore, since the probability of the missingness could be related to the value itself, the missing data in this column could be classified as NMAR. Additional data we might want to obtain to explain this missingness, and make it MAR, is the radius of how far the outage impacted.
 
 **Missingness Dependency**
-The column in our dataset with nontrivial mmissingness that we analyzed was the DEMAND.LOSS.MW column. We performed two permuation tests to determine if the missingess observed in the DEMAND.LOSS.MW column depends on 1) the OUTAGE.DURATION or 2) CAUSE.CATEGORY. Both permuation tests were determining if DEMAND.LOSS.MW missingness was Missing at Random (MAR), meaning that missingness depends on another column. Additionally, for both permutation tests the test statistic we choose was Total Variation Distance (TVD) because this quantifies the difference in distributions.
+The column in our dataset with nontrivial mmissingness that we analyzed was the DEMAND.LOSS.MW column. We performed two permuation tests to determine if the missingess observed in the DEMAND.LOSS.MW column depends on (1) the OUTAGE.DURATION or (2) CAUSE.CATEGORY. Both permuation tests were determining if DEMAND.LOSS.MW missingness was Missing at Random (MAR), meaning that missingness depends on another column. Additionally, for both permutation tests the test statistic we choose was Total Variation Distance (TVD) because this quantifies the difference in distributions.
 
-1. For the first permuation test, using DEMAND.LOSS.MW and OUTAGE.DURATION, our hypotheses were as follows:
+**For the first permuation test, using DEMAND.LOSS.MW and OUTAGE.DURATION, our hypotheses were as follows:**
 
 **Null Hypothesis:** Missingness of DEMAND.LOSS.MW is independent of OUTAGE.DURATION.
 
@@ -169,9 +169,9 @@ The column in our dataset with nontrivial mmissingness that we analyzed was the 
   frameborder="0"
 ></iframe>
 
-**Interpretation** Based on the p-value of 0.67 we would fail to reject the null hypothesis. Therefore, there is not sufficient evidence to conclude that the missingness in demand loss can be explained by the duration of the outage. Thus, since missingness in demand loss is not dependent on duration the missingness is MCAR not MAR.
+**Interpretation** Based on the p-value of 0.6836 we would fail to reject the null hypothesis. Therefore, there is not sufficient evidence to conclude that the missingness in demand loss can be explained by the duration of the outage. Thus, since missingness in demand loss is not dependent on duration, the missingness is MCAR not MAR.
 
-2. Our second hypothesis test used the DEMAND.LOSS and CAUSE.CATEGORY columns. Similiary, our hypotheses were as follows:
+**Our permutation hypothesis test used the DEMAND.LOSS and CAUSE.CATEGORY columns. Similiary, our hypotheses were as follows:**
 
 **Null Hypothesis:** Missingness of DEMAND.LOSS.MW is independent of CAUSE.CATEGORY.
 
@@ -186,7 +186,7 @@ The column in our dataset with nontrivial mmissingness that we analyzed was the 
   frameborder="0"
 ></iframe>
 
-**Interpretation** Here, the p-value was () which is less than our significance level of 0.05, meaning that we reject the null hypothesis. Since we reject the null, this illustrates that the missingness in the DEMAND.LOSS column does depend on CAUSE.CATEGORY. Likely, this is because different causes of outages are associated with varying amounts of peak MegaWatt loss, which could be an explannation for why missingness in this column depends on outage cause. 
+**Interpretation** Here, the p-value was 0.0 which is less than our significance level of 0.05, meaning that we reject the null hypothesis. Since we reject the null, this illustrates that the missingness in the DEMAND.LOSS column does depend on CAUSE.CATEGORY. Likely, this is because different causes of outages are associated with varying amounts of peak MegaWatt loss, which could be an explannation for why missingness in this column depends on outage cause. 
 
 ## Hypothesis Testing
 The two hypotheses we tested were:
@@ -196,7 +196,7 @@ The two hypotheses we tested were:
 **Alternative:** The mean duration of coastal outages is longer than the mean duration of inland state outages.
 
 
-The test statistic that we used to conduct our permuation test was the difference in means between the groups: coastal and inland. The result of our permutation test, was a p-value of 0.0164, so we would reject the null hypothesis in favor of the alternative, using an alpha=0.05 significance level. Meaning, we conclude our result is statistically significant and therefore there is evidence against the null and in favor of coastal states experiencing longer outages on average than inland states. 
+The test statistic that we used to conduct our permuation test was the difference in means between the groups: coastal and inland. The result of our permutation test, was a p-value of 0.0126, so we would reject the null hypothesis in favor of the alternative, using an alpha=0.05 significance level. Meaning, we conclude our result is statistically significant and therefore there is evidence against the null and in favor of coastal states experiencing longer outages on average than inland states. 
 
 The null and alternative hypotheses are helpful towards answering our intial question from above, do coastal states experience longer power outages than inland states, because it tests for if there exists a relationship between location of a state on the duration of the outage experienced. The alpha of 0.05 was choosen because we wanted the conclusion of our permutation test to indicate statisitically significant results to reduce the chance of false positives (falsely rejecting the null). Difference in means was a good choice towards answering our question because we could simulate and compare the mean outage duration for the two groups (coastal and inland) to be able to make a conclusion about if one group experiences longer outages not by random chance.
 
@@ -276,7 +276,7 @@ For our fairness analysis, we choose the groups "COASTAL" and "INLAND." The metr
 
 **Alternative Hypothesis** The model is unfair. The model performs worse (higher error) for coastal outages compared to inland ones.
 
-We computed the observed difference in errors between the two groups and then performed a permutation test using the test statistic: TVD. In each permutation, We randomly reassigned the groups (coastal/inland) while keeping the model’s predictions constant. This is simulating under the assumption that the null is true, meaning where the model is fair. We simulated 5,000 times to build a null distribution of error differences. Finally, I compared the observed difference, an RMSE of 0.218, to this null distribution to obtain a p-value of 0.0278. Using a 0.05 signifcance level we would reject the null, that the model is fair, suggesting that our model results in higher prediction errors for coastal as compared to inland states.
+We computed the observed difference in errors between the two groups and then performed a permutation test using the test statistic: TVD. In each permutation, We randomly reassigned the groups (coastal/inland) while keeping the model’s predictions constant. This is simulating under the assumption that the null is true, meaning where the model is fair. We simulated 5,000 times to build a null distribution of error differences. Finally, I compared the observed difference, an RMSE of 0.218, to this null distribution to obtain a p-value of 0.0282. Using a 0.05 signifcance level we would reject the null, that the model is fair, suggesting that our model results in higher prediction errors for coastal as compared to inland states.
 
 **Visulization of Fairness Analysis Permuation Test**
 <iframe
