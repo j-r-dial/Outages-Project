@@ -251,13 +251,13 @@ Features that we engineered:
 The modeling algorithm we choose was LinearRegression. We performed a k-fold cross validation test with 5 folds to ensure that the model's performance was no dependent on a signle train-test split and also made sure that we weren't overfitting the model by measuring the performance across multiple folds. Our  parameters were: n_estimators (number of trees), max_depth, min_samples_split, min_samples_leaf, and max_features. The best performing hyperparameters of our final model found using GridSearchCV to test many different hyperparameter combinations were:
 - 'model__max_depth': 12
   
--'model__max_features': 'sqrt', each split considers the sqaure root of the number of features which improves generalization
+- 'model__max_features': 'sqrt', each split considers the sqaure root of the number of features which improves generalization
 
 - 'model__min_samples_leaf': 2, every leaf in the tree must contain 2 samples in order to prevet overfitting
 
--'model__min_samples_split': 5, a node must have 5 samples before the model splits which also avoids overfitting
+- 'model__min_samples_split': 5, a node must have 5 samples before the model splits which also avoids overfitting
 
--'model__n_estimators': 100, gives the forest enough votes to make predictions without under or overfitting
+- 'model__n_estimators': 100, gives the forest enough votes to make predictions without under or overfitting
 
 The performance of our model improved from our baseline model. In our baseline model we only used the features: NERC.REGION, CAUSE.CATEGORY, CLIMATE.REGION, and ANOMALY.LEVEL (that orginally included positive and negative values). In our improved final model, we added in the new IS_SUMMER feature as well as engineered the columns ANOMALY.LEVEL and OUTAGE.DURATION. As a result, we got a significantly lower RMSE of 1.65 and MAE of 1.22. This happened because we added the meanful feature IS_SUMMER and better aligned our ANOMALY.LEVEL and OUTAGE.DURATION to match our prediction goal. In summary, our final model is now better equipped to predict outage durations than our final model.
 
