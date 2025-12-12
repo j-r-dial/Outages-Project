@@ -270,3 +270,12 @@ The performance of our model improved from our baseline model. In our baseline m
 ></iframe>
 
 ## Fairness Analysis
+For our fairness analysis, we choose the groups "COASTAL" and "INLAND." The metric we used to evaluate our final model prediction errors for outage durations on coatal versus inland stats was RMSE. 
+
+**Null Hypothesis** The model is fair. Any observed difference in prediction errors for Coastal and Inland outages is due to chance.
+
+**Alternative Hypothesis** The model is unfair. The model performs worse (higher error) for coastal outages compared to inland ones.
+
+We computed the observed difference in errors between the two groups and then performed a permutation test using the test statistic: TVD. In each permutation, We randomly reassigned the groups (coastal/inland) while keeping the model’s predictions constant. This is simulating under the assumption that the null is true, meaning where the model is fair. We simulated 5,000 times to build a null distribution of error differences. Finally, I compared the observed difference, an RMSE of 0.218, to this null distribution to obtain a p-value of 0.0278. Using a 0.05 signifcance level we would reject the null, that the model is fair, suggesting that our model results in higher prediction errors for coastal as compared to inland states.
+
+**Visulization of Fairness Analysis Permuation Test**
